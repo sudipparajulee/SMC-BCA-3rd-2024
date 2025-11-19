@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <p id="result" onclick="myFunction();">This is result tag</p>
+    <input type="text" placeholder="Enter First Number" id="num1">
+    <input type="text" placeholder="Enter Second Number" id="num2">
+    <button onclick="sum()">SUM</button>
+    <p id="output"></p>
+    <script>
+
+        function sum(){
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let total = Number(num1) + Number(num2);
+            document.getElementById('output').innerHTML = "the total is " +total;
+        }
+
+        document.write("hello");
+        document.write("<h1>Hello World</h1>");
+        
+        function myFunction(){
+            let a = "1";
+            let b = 3.5;
+            let sum = Number(a) + b;
+            // document.write("The sum is " + sum);
+            document.getElementById("result").innerText = "The sum is " + sum;
+            // document.getElementById("result").style.color = "red";
+            // document.getElementById("result").style.fontWeight = "bold";
+            // document.getElementById("result").style.backgroundColor = "yellow";
+            document.getElementById("result").classList.add("text-red-500", "font-bold", "bg-yellow-300", "p-4", "text-center");
+            document.getElementById("result").classList.remove("text-red-500");
+        }
+    </script>
+</body>
+</html>
