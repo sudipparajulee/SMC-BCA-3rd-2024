@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex items-center justify-center bg-gray-100 h-screen">
+        <div class="px-10 py-4 rounded-lg shadow-lg bg-white w-1/3 text-center">
+            <h2 class="font-bold text-2xl pb-5">Percentage Calculator</h2>
+            <input type="text" id="sub1" placeholder="Enter English Marks" class="border w-full p-2 my-2 rounded-lg">
+            <input type="text" id="sub2" placeholder="Enter Maths Marks" class="border w-full p-2 my-2 rounded-lg">
+            <input type="text" id="sub3" placeholder="Enter Science Marks" class="border w-full p-2 my-2 rounded-lg">
+            <p class="py-1 mb-4 rounded-lg" id="result">Result: </p>
+            <div class="flex gap-4 justify-center">
+                <button class="bg-green-100 px-4 py-1 rounded-lg" onclick="calculatePercentage()">Calculate Percentage</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calculatePercentage(){
+            let m1 = document.getElementById('sub1').value;
+            let m2 = document.getElementById('sub2').value;
+            let m3 = document.getElementById('sub3').value;
+            let obtained = Number(m1) + Number(m2) + Number(m3);
+            let per = obtained/300 * 100;
+            per = per.toFixed(2);
+            document.getElementById('result').innerHTML = 'Percentage: '+per+'%';
+        }
+    </script>
+</body>
+</html>

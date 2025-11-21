@@ -15,9 +15,9 @@
             <p class="py-1 mb-4 rounded-lg" id="result">The sum is 5</p>
             <div class="flex gap-4">
                 <button class="bg-green-100 px-4 py-1 rounded-lg" onclick="sum()">Add</button>
-                <button class="bg-red-100 px-4 py-1 rounded-lg">Sub</button>
-                <button class="bg-yellow-100 px-4 py-1 rounded-lg">Multiply</button>
-                <button class="bg-blue-100 px-4 py-1 rounded-lg">Divide</button>
+                <button class="bg-red-100 px-4 py-1 rounded-lg" onclick="sub()">Sub</button>
+                <button class="bg-yellow-100 px-4 py-1 rounded-lg" onclick="mul()">Multiply</button>
+                <button class="bg-blue-100 px-4 py-1 rounded-lg" onclick="div()">Divide</button>
             </div>
         </div>
     </div>
@@ -27,6 +27,34 @@
             let num2 = document.getElementById('num2').value;
             let result = Number(num1) + Number(num2);
             document.getElementById('result').innerHTML = "The sum is " + result;
+        }
+
+        function sub(){
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let result = Number(num1) - Number(num2);
+            document.getElementById('result').innerHTML = "The difference is " + result;
+        }
+
+        function mul(){
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let result = Number(num1) * Number(num2);
+            document.getElementById('result').innerHTML = "The product is " + result;
+        }
+
+        function div(){
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            //check for division by zero
+            if (num2 == 0) {
+                document.getElementById('result').innerHTML = "Cannot divide by zero/null";
+                return;
+            }
+            let result = Number(num1) / Number(num2);
+            //to fixed 2
+            result = result.toFixed(2);
+            document.getElementById('result').innerHTML = "The quotient is " + result;
         }
     </script>
 </body>
