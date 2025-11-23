@@ -13,6 +13,9 @@
             <input type="text" id="sub1" placeholder="Enter English Marks" class="border w-full p-2 my-2 rounded-lg">
             <input type="text" id="sub2" placeholder="Enter Maths Marks" class="border w-full p-2 my-2 rounded-lg">
             <input type="text" id="sub3" placeholder="Enter Science Marks" class="border w-full p-2 my-2 rounded-lg">
+            <div class="bg-gray-100 rounded-lg">
+                <div id="progress" class="bg-blue-500 p-2 rounded-lg text-white transition-all duration-300" style="width: 15.00%;">15.00%</div>
+            </div>
             <p class="py-1 mb-4 rounded-lg" id="result">Result: </p>
             <div class="flex gap-4 justify-center">
                 <button class="bg-green-100 px-4 py-1 rounded-lg" onclick="calculatePercentage()">Calculate Percentage</button>
@@ -24,11 +27,35 @@
             let m1 = document.getElementById('sub1').value;
             let m2 = document.getElementById('sub2').value;
             let m3 = document.getElementById('sub3').value;
+            //check if inputs are valid numbers
+            if(isNaN(m1) || isNaN(m2) || isNaN(3)){
+                alert('Please enter valid number');
+                return;
+            }
+            //check if the numbers are between 0 and 100
+            if(m1<0 || m1 > 100 || m2 < 0 || m2 > 100 || m3 < 0 || m3 > 100){
+                alert('The marks must be between 0 and 100');
+                return;
+            }
             let obtained = Number(m1) + Number(m2) + Number(m3);
             let per = obtained/300 * 100;
             per = per.toFixed(2);
+            let progress = 0;
+            function handleProgress(){
+                progress = progress + 1;
+                if(progress >= per){
+                    clearInterval(handle);
+                    progress = per;
+                }
+                document.getElementById('progress').innerHTML = progress+'%';
+                document.getElementById('progress').style.width = progress+'%';
+
+            }
+            let handle = setInterval(handleProgress,100);
+            
             document.getElementById('result').innerHTML = 'Percentage: '+per+'%';
         }
+        
     </script>
 </body>
 </html>
