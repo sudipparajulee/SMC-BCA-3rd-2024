@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="md:flex hidden justify-between px-20 py-3 bg-blue-600 text-white items-center">
+        <h2 class="font-bold text-xl">LOGO</h2>
+        <nav>
+            <ul class="flex gap-8">
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300">About</a></li>
+                <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="md:hidden">
+        <div class="flex justify-between px-20 py-3 bg-blue-600 text-white items-center">
+            <h2 class="font-bold text-xl">LOGO</h2>
+            <span class="font-bold text-xl cursor-pointer">=</span>
+        </div>
+        <nav class="hidden">
+            <ul class="grid gap-2 text-center bg-blue-100">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
