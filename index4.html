@@ -21,9 +21,9 @@
     <div class="md:hidden">
         <div class="flex justify-between px-20 py-3 bg-blue-600 text-white items-center">
             <h2 class="font-bold text-xl">LOGO</h2>
-            <span class="font-bold text-xl cursor-pointer">=</span>
+            <span class="font-bold text-xl cursor-pointer" onclick="toggleNav()">=</span>
         </div>
-        <nav class="hidden">
+        <nav class="hidden" id="mobNav">
             <ul class="grid gap-2 text-center bg-blue-100">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -32,5 +32,10 @@
             </ul>
         </nav>
     </div>
+    <script>
+        function toggleNav(){
+            document.getElementById('mobNav').classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>
