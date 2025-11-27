@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="text-center mt-5">
+        <h2 id="clock" class="text-4xl text-center font-bold bg-slate-900 text-amber-300 px-4 py-2 inline font-mono"></h2>
+    </div>
+
+    <script>
+        function clock(){
+            let time = new Date();
+            let h = time.getHours();
+            let m = time.getMinutes();
+            let s = time.getSeconds();
+            let fulltime = check(h) + ':' + check(m) + ':' + check(s);
+            document.getElementById('clock').innerHTML = fulltime;
+        }
+        function check(x){
+            return x < 10 ? '0'+ x : x;
+        }
+        clock();
+        setInterval(clock,1000);
+    </script>
+</body>
+</html>
