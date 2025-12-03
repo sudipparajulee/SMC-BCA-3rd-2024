@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex h-screen">
+        <div class="w-56 bg-gray-200">
+            <h2 class="text-center py-4 font-bold text-2xl text-blue-600">ADMIN</h2>
+            <nav class="grid">
+                <a href="" class="hover:bg-blue-600 hover:text-white p-3 text-xl"> Dashboard </a>
+                <a href="" class="hover:bg-blue-600 hover:text-white p-3 text-xl"> Categories </a>
+                <a href="" class="hover:bg-blue-600 hover:text-white p-3 text-xl"> Products </a>
+                <a href="" class="hover:bg-blue-600 hover:text-white p-3 text-xl"> Customers </a>
+                <a href="" class="hover:bg-blue-600 hover:text-white p-3 text-xl"> Orders </a>
+                <a href="" class="hover:bg-blue-600 hover:text-white p-3 text-xl"> Settings </a>
+                <a href="" class="hover:bg-blue-600 hover:text-white p-3 text-xl"> Logout </a>
+            </nav>
+        </div>
+        <div class="p-4 flex-1">
+            <h2 class="font-bold text-2xl">Dashboard</h2>
+            <hr class="h-1 bg-blue-600">
+            <div class="grid grid-cols-3 gap-4 mt-5">
+                <div class="p-4 shadow rounded-lg bg-red-100">
+                    <h3 class="font-bold text-xl">Total Categories</h3>
+                    <p class="text-3xl">15</p>
+                </div>
+                <div class="p-4 shadow rounded-lg bg-blue-100">
+                    <h3 class="font-bold text-xl">Total Products</h3>
+                    <p class="text-3xl">150</p>
+                </div>
+                <div class="p-4 shadow rounded-lg bg-green-100">
+                    <h3 class="font-bold text-xl">Total Orders</h3>
+                    <p class="text-3xl">1500</p>
+                </div>
+            </div>
+            <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'area',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+ 
+</body>
+</html>
