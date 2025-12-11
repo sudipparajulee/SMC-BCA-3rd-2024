@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">
+        <img src="https://lipsum.app/id/1/1600x1200" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="https://lipsum.app/id/2/1600x1200" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="https://lipsum.app/id/3/1600x1200" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="https://lipsum.app/id/4/1600x1200" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="https://lipsum.app/id/5/1600x1200" alt="">
+    </div>
+    <div class="swiper-slide">
+        <img src="https://lipsum.app/id/6/1600x1200" alt="">
+    </div>
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    loop: true,
+slidesPerView: 3,
+spaceBetween: 10,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    });
+    </script>
+</body>
+</html>
