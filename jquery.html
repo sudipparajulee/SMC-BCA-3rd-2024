@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <h1>Hello, jQuery!</h1>
+    <div class="flex h-screen bg-blue-500 justify-center items-center">
+        <div class="bg-white p-4 rounded-lg shadow-md">
+            <div>
+                <input type="text" placeholder="Enter Todo Task" class="border border-gray-300 rounded px-2 py-1 w-64">
+                <button class="bg-blue-500 text-white px-4 py-1 rounded ml-2">Add Task</button>
+            </div>
+            <ul class="mt-4">
+                <!-- Todo items will be added here -->
+            </ul>
+        </div>
+    </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
-        $('h1').css('color', 'blue').text('Hello, jQuery has changed me!');
+        $(document).ready(function() {
+            $('button').click(function() {
+                $li = $('<li class="border-b border-gray-200 py-2"></li>');
+                const task = $('input').val();
+                if (task) {
+                    $('ul').append($li.text(task));
+                    $('input').val('');
+                }
+            });
+        });
     </script>
 </body>
 </html>
