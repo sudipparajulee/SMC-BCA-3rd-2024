@@ -13,7 +13,7 @@
                 <input type="text" placeholder="Enter Todo Task" class="border border-gray-300 rounded px-2 py-1 w-64">
                 <button class="bg-blue-500 text-white px-4 py-1 rounded ml-2">Add Task</button>
             </div>
-            <ul class="mt-4">
+            <ul class="mt-4 h-44 overflow-y-auto">
                 <!-- Todo items will be added here -->
             </ul>
         </div>
@@ -21,11 +21,13 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js" integrity="sha512-MSOo1aY+3pXCOCdGAYoBZ6YGI0aragoQsg1mKKBHXCYPIWxamwOE7Drh+N5CPgGI5SA9IEKJiPjdfqWFWmZtRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         $(document).ready(function() {
+            $("ul").sortable();
             $('button').click(function() {
-                $li = $('<li class="border-b border-gray-200 py-2"></li>');
+                $li = $('<li class="border-b border-gray-200 bg-white py-2"></li>');
                 const task = $('input').val();
                 if (task) {
                     $('ul').append($li.text(task));
